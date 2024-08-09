@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "ufw-ui-manager-api"
+version = "0.1.0"
+description = "I'm thinking in better description"
+authors = ["MichaelDeMattos <chelmto3000@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+alembic = "^1.13.2"
+pydantic-settings = "^2.4.0"
+fastapi = "^0.112.0"
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.32"}
+ruff = "^0.5.7"
+asyncpg = "^0.29.0"
+psycopg2 = "^2.9.9"
+prometheus-client = "^0.20.0"
+sentry-sdk = "^2.12.0"
+prometheus-fastapi-instrumentator = "^7.0.0"
+uvicorn = "^0.30.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+preview = true
+line-length = 79
+lint.select = [
+    "E231", # Missing whitespace after '{token}'
+    "F401", # UnusedImport
+    "W292", # No newline at end of file
+    "E501", # LineTooLong
+    "F821", # UndefinedName
+    "F841", # UnusedVariable
+]
